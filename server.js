@@ -22,16 +22,18 @@ app.post('/send-email', async (req, res) => {
     });
 
     const html = `
-    <h2>New Form Submission</h2>
-    <table cellspacing="0" cellpadding="8" border="1" style="border-collapse: collapse; font-family: Arial, sans-serif;">
-      <tr><th align="left">Name</th><td>${name || '(Not provided)'}</td></tr>
-      <tr><th align="left">Email</th><td>${email || '(Not provided)'}</td></tr>
-      <tr><th align="left">Phone</th><td>${phone || '(Not provided)'}</td></tr>
-      <tr><th align="left">Country</th><td>${rest.country || '(Not provided)'}</td></tr>
-      <tr><th align="left">City</th><td>${rest.city || '(Not provided)'}</td></tr>
-      <tr><th align="left">Medical Issue</th><td>${rest.issue || '(Not provided)'}</td></tr>
-      <tr><th align="left">Age / DOB</th><td>${rest.age || '(Not provided)'}</td></tr>
-    </table>
+    <p>Dear Team,</p>
+    <p>You have received a new form submission:</p>
+    <ul style="font-family: Arial, sans-serif; font-size: 15px;">
+      <li><b>Name:</b> ${name || '(Not provided)'}</li>
+      <li><b>Email:</b> ${email || '(Not provided)'}</li>
+      <li><b>Phone:</b> ${phone || '(Not provided)'}</li>
+      <li><b>Country:</b> ${rest.country || '(Not provided)'}</li>
+      <li><b>City:</b> ${rest.city || '(Not provided)'}</li>
+      <li><b>Medical Issue:</b> ${rest.issue || '(Not provided)'}</li>
+      <li><b>Age / DOB:</b> ${rest.age || '(Not provided)'}</li>
+    </ul>
+    <p>Regards,<br>Your Website</p>
   `;
 
     const mailOptions = {

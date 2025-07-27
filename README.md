@@ -20,7 +20,8 @@ This backend receives form data and sends it to info@almustafa-medical.com using
 
 ## Example cURL
 ```
-curl -X POST http://localhost:5000/send-email \
+curl -X POST https://mail-send-zhaz.onrender.com/send-email \
+
   -H "Content-Type: application/json" \
   -d '{"name":"Test User","email":"test@example.com","phone":"1234567890","message":"Hello!"}'
 ``` 
